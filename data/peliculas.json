@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "titulo": "Dune: Parte Uno",
+    "imagen": "dune.jpg",
+    "generos": ["Ciencia ficción", "Aventura", "Drama"],
+    "sinopsis": "En un futuro lejano, Paul Atreides, un joven brillante nacido con un destino excepcional, viaja al planeta desértico Arrakis, donde se libra una guerra por el control de la especia, el recurso más valioso del universo. Entre visiones místicas, traiciones y rebeliones, Paul deberá enfrentarse a su destino y convertirse en el Mesías de los Fremen.",
+    "trailer": "https://www.youtube.com/embed/n9xhJrPXop4",
+    "estreno": "2021-10-22T00:00:00Z",
+    "precios": { "estreno": 10.99, "normal": 6.99 }
+  },
+  {
+    "id": 2,
+    "titulo": "50 primeras citas",
+    "imagen": "50-primeras-citas.jpg",
+    "generos": ["Comedia", "Romance", "Drama"],
+    "sinopsis": "Henry Roth, un biólogo marino en Hawái, conoce a Lucy Whitmore y se enamora de ella. Pero Lucy sufre pérdida de memoria a corto plazo y olvida todo al día siguiente. Determinado a conquistarla, Henry crea cada día nuevas formas de hacerla enamorarse otra vez, demostrando que el amor verdadero no necesita recuerdos para existir.",
+    "trailer": "https://www.youtube.com/embed/ErjP5xMTc8I",
+    "estreno": "2004-02-13T00:00:00Z",
+    "precios": { "estreno": 8.99, "normal": 5.99 }
+  },
+  {
+    "id": 3,
+    "titulo": "Batman: El Caballero de la Noche",
+    "imagen": "batman-caballero-de-la-noche.webp",
+    "generos": ["Acción", "Crimen", "Drama"],
+    "sinopsis": "Con la ayuda del teniente Jim Gordon y el fiscal Harvey Dent, Batman intenta acabar con el crimen organizado en Gotham. Pero la llegada del Joker, un criminal anárquico y cruel, desata el caos y pone a prueba los límites morales del héroe. La justicia y la locura se enfrentan en una batalla épica e inolvidable.",
+    "trailer": "https://www.youtube.com/embed/EXeTwQWrcwY",
+    "estreno": "2008-07-18T00:00:00Z",
+    "precios": { "estreno": 9.99, "normal": 6.49 }
+  },
+  {
+    "id": 4,
+    "titulo": "Iron Man",
+    "imagen": "iron_man.jpg",
+    "generos": ["Acción", "Ciencia ficción", "Aventura"],
+    "sinopsis": "Tony Stark, un multimillonario fabricante de armas, es secuestrado y obligado a construir un arma devastadora. En lugar de eso, crea una armadura avanzada para escapar. Al regresar, decide usar su tecnología para proteger al mundo como Iron Man, enfrentándose a enemigos que buscan aprovechar su genio para fines destructivos y personales.",
+    "trailer": "https://www.youtube.com/watch?v=8ugaeA-nMTc",
+    "estreno": "2008-05-02T00:00:00Z",
+    "precios": { "estreno": 9.99, "normal": 6.49 }
+  },
+  {
+    "id": 5,
+    "titulo": "Avengers: Endgame",
+    "imagen": "avengers_endgame.jpg",
+    "generos": ["Acción", "Ciencia ficción", "Superhéroes"],
+    "sinopsis": "Tras los devastadores eventos de Infinity War, los Vengadores deben unirse una última vez para revertir el daño causado por Thanos. Con el universo en ruinas y sus aliados caídos, enfrentan sacrificios y viajes en el tiempo para restaurar la esperanza. Una conclusión épica que celebra la valentía, el amor y la unidad.",
+    "trailer": "https://www.youtube.com/watch?v=TcMBFSGVi1c",
+    "estreno": "2019-04-26T00:00:00Z",
+    "precios": { "estreno": 10.99, "normal": 7.49 }
+  },
+  {
+    "id": 6,
+    "titulo": "Black Panther",
+    "imagen": "black_panther.jpg",
+    "generos": ["Acción", "Aventura", "Fantasía"],
+    "sinopsis": "Tras la muerte de su padre, T’Challa regresa a Wakanda para asumir el trono. Como Black Panther, debe proteger su nación secreta y avanzada de enemigos que buscan apoderarse del poder. La lucha por el liderazgo se convierte en una batalla por la identidad, la justicia y el futuro de su pueblo africano.",
+    "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+    "estreno": "2018-02-16T00:00:00Z",
+    "precios": { "estreno": 10.49, "normal": 6.49 }
+  },
+  {
+    "id": 7,
+    "titulo": "Spider-Man: No Way Home",
+    "imagen": "spider_man.jpg",
+    "generos": ["Acción", "Aventura", "Ciencia ficción"],
+    "sinopsis": "Después de que su identidad secreta es revelada, Peter Parker acude a Doctor Strange para hacer que el mundo olvide quién es. Pero el hechizo se sale de control, abriendo el multiverso y trayendo villanos de otras realidades. Peter deberá aprender el verdadero significado de ser Spider-Man en medio del caos y el sacrificio.",
+    "trailer": "https://www.youtube.com/watch?v=JfVOs4VSpmA",
+    "estreno": "2021-12-17T00:00:00Z",
+    "precios": { "estreno": 11.49, "normal": 7.49 }
+  },
+  {
+    "id": 8,
+    "titulo": "Guardianes de la Galaxia Vol. 3",
+    "imagen": "guardians_of_galaxy.jpg",
+    "generos": ["Acción", "Ciencia ficción", "Comedia"],
+    "sinopsis": "Los Guardianes enfrentan una nueva amenaza mientras intentan proteger a Rocket y sanar viejas heridas. Peter Quill aún lidia con la pérdida de Gamora, pero debe liderar a su equipo una vez más. Entre humor, emoción y acción, la saga cósmica concluye con un viaje sobre familia, redención y el poder del amor verdadero.",
+    "trailer": "https://www.youtube.com/watch?v=u3V5KDHRQvk",
+    "estreno": "2023-05-05T00:00:00Z",
+    "precios": { "estreno": 11.49, "normal": 7.49 }
+  }
+]
