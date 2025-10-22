@@ -14,6 +14,7 @@
       <div class="text-center mb-4">
         <h2 id="titulo" class="mb-3"></h2>
 
+        <span id="badge"></div>
         <!-- Componente: Alerta informativa -->
         <div class="alert alert-info" role="alert">
           ¡Disfruta del tráiler oficial y conoce más sobre esta película!
@@ -54,6 +55,8 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../js/utils.js"></script>
+
     <script>
       $(function () {
         const urlParams = new URLSearchParams(window.location.search);
@@ -66,6 +69,7 @@
           success: function (peliculas) {
             const peli = peliculas.find((p) => p.id == id);
             if (peli) {
+              $("#badge").text(mensajeBadge(peli))
               $("#titulo").text(peli.titulo);
               $("#poster").attr("src", "../img/" + peli.imagen);
               $("#sinopsis").text(peli.sinopsis);

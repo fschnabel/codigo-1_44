@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Renta de Películas</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body { background:#f8f9fa; }
+    .card { border-radius: 1rem; }
+    .required::after { content:" *"; color:#dc3545; }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow">
+          <div class="card-body p-4">
+            <h1 class="h3 mb-4">Renta de Películas</h1>
+
+            <form id="form-renta" novalidate>
+              <!-- Datos del cliente -->
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label required" for="clienteNombre">Nombre y apellido</label>
+                  <input type="text" class="form-control" id="clienteNombre" required placeholder="Ej: Ana Pérez">
+                  <div class="invalid-feedback">Ingresa tu nombre.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="clienteEmail">Email (opcional)</label>
+                  <input type="email" class="form-control" id="clienteEmail" placeholder="ana@email.com">
+                  <div class="invalid-feedback">Correo no válido.</div>
+                </div>
+              </div>
+
+              <hr class="my-4">
+
+              <!-- Selección de películas -->
+              <div class="mb-3">
+                <label class="form-label required" for="selectorPeliculas">Películas (puedes elegir varias)</label>
+                <select id="selectorPeliculas" class="form-select" multiple required size="6" aria-describedby="ayudaPeliculas">
+                  <option disabled>Cargando catálogo…</option>
+                </select>
+                <div id="ayudaPeliculas" class="form-text">
+                  Mantén presionada Ctrl (Windows) o Cmd (Mac) para seleccionar múltiples opciones.
+                </div>
+                <div class="invalid-feedback">Selecciona al menos una película.</div>
+              </div>
+
+              <!-- Días de renta -->
+              <div class="row g-3 align-items-end">
+                <div class="col-md-4">
+                  <label class="form-label required" for="diasRenta">Días de renta</label>
+                  <input type="number" class="form-control" id="diasRenta" min="1" step="1" value="1" required>
+                  <div class="invalid-feedback">Ingresa un número de días válido (mínimo 1).</div>
+                </div>
+
+                <!-- Forma de pago -->
+                <div class="col-md-8">
+                  <span class="form-label d-block required">Forma de pago</span>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="pago" id="pagoTarjeta" value="Tarjeta" required>
+                    <label class="form-check-label" for="pagoTarjeta">Tarjeta</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="pago" id="pagoEfectivo" value="Efectivo">
+                    <label class="form-check-label" for="pagoEfectivo">Efectivo</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="pago" id="pagoTransferencia" value="Transferencia">
+                    <label class="form-check-label" for="pagoTransferencia">Transferencia</label>
+                  </div>
+                  <div class="invalid-feedback" id="pagoError">Selecciona una forma de pago.</div>
+                </div>
+              </div>
+
+              <div class="d-grid d-sm-flex gap-2 justify-content-sm-end mt-4">
+                <button type="reset" class="btn btn-outline-secondary">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Confirmar renta</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Estado de carga -->
+        <div id="catalogoEstado" class="text-center text-muted small mt-3" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal resumen -->
+  <div class="modal fade" id="resumenModal" tabindex="-1" aria-hidden="true" aria-labelledby="resumenLabel">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="resumenLabel">Resumen de la compra</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div id="resumenContenido"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button class="btn btn-success">Pagar ahora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery + Bootstrap Bundle (con Popper y Modal) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/utils.js"></script>
+
+  <script>
+    // Carga del catálogo
+    $(function () {
+      const $sel = $("#selectorPeliculas");
+      const $estado = $("#catalogoEstado");
+
+      $estado.text("Cargando catálogo…");
+
+      $.ajax({
+        url: "../data/peliculas.json", // cambia a ../data/peliculas.json si esta página está en /pages/
+        method: "GET",
+        dataType: "json",
+        cache: false,
+        success: function (peliculas) {
+          $sel.empty();
+          peliculas.forEach((p) => {
+            // Usamos precios.normal como tarifa diaria de renta
+            const precio = obtenerPrecio(p)
+            const generosTxt = Array.isArray(p.generos) ? p.generos.join(" · ") : (p.generos || "");
+            const label = `${p.titulo} — ${precio} por día`;
+            const $opt = $(`<option></option>`)
+              .val(p.id)
+              .text(label)
+              .attr("data-precio", precio)
+              .attr("data-titulo", p.titulo);
+            $sel.append($opt);
+          });
+          $estado.text(`Catálogo cargado: ${peliculas.length} película(s).`);
+        },
+        error: function (xhr, status, error) {
+          console.error("Error al cargar el catálogo:", { status, error, response: xhr?.responseText });
+          $sel.html(`<option disabled>Error al cargar el catálogo</option>`);
+          $estado.text("No se pudo cargar el catálogo. Reintenta más tarde.");
+        }
+      });
+    });
+
+    // Validación y envío del formulario
+    (function () {
+      const form = document.getElementById("form-renta");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Validaciones HTML5
+        if (!form.checkValidity()) {
+          e.stopPropagation();
+          form.classList.add("was-validated");
+          // Validación manual de selector (forma de pago)
+          const pagoSeleccionado = document.querySelector('input[name="pago"]:checked');
+          document.getElementById("pagoError").style.display = pagoSeleccionado ? "none" : "block";
+          return;
+        }
+
+        // Validación de forma de pago
+        const pagoSeleccionado = document.querySelector('input[name="pago"]:checked');
+        if (!pagoSeleccionado) {
+          document.getElementById("pagoError").style.display = "block";
+          return;
+        } else {
+          document.getElementById("pagoError").style.display = "none";
+        }
+
+        // Recolectar datos
+        const nombre = $("#clienteNombre").val().trim();
+        const email = $("#clienteEmail").val().trim();
+        const dias = parseInt($("#diasRenta").val(), 10);
+        const pago = pagoSeleccionado.value;
+
+        // Películas seleccionadas
+        const seleccionados = Array.from($("#selectorPeliculas option:checked"));
+        if (seleccionados.length === 0) {
+          // forzar invalid-feedback del select
+          $("#selectorPeliculas").addClass("is-invalid");
+          return;
+        } else {
+          $("#selectorPeliculas").removeClass("is-invalid");
+        }
+
+        const items = seleccionados.map(opt => {
+          const precio = Number(opt.getAttribute("data-precio") || 0);
+          const titulo = opt.getAttribute("data-titulo") || opt.text;
+          const subtotal = precio * dias;
+          return { titulo, precio, subtotal };
+        });
+
+        const total = items.reduce((acc, it) => acc + it.subtotal, 0);
+
+        // Construir HTML del resumen
+        const filas = items.map(it => `
+          <tr>
+            <td>${it.titulo}</td>
+            <td class="text-end">${formatearPrecio(it.precio)} / día</td>
+            <td class="text-center">${dias}</td>
+            <td class="text-end fw-semibold">${formatearPrecio(it.subtotal)}</td>
+          </tr>
+        `).join("");
+
+        const emailLinea = email ? `<div><strong>Email:</strong> ${email}</div>` : "";
+
+        const resumenHTML = `
+          <div class="mb-3">
+            <div><strong>Cliente:</strong> ${nombre}</div>
+            ${emailLinea}
+            <div><strong>Forma de pago:</strong> ${pago}</div>
+            <div><strong>Días de renta:</strong> ${dias}</div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-sm align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th>Película</th>
+                  <th class="text-end">Tarifa</th>
+                  <th class="text-center">Días</th>
+                  <th class="text-end">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${filas}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="3" class="text-end">Total a pagar</th>
+                  <th class="text-end fs-5">${formatearPrecio(total)}</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        `;
+
+        $("#resumenContenido").html(resumenHTML);
+
+        // Mostrar modal
+        const modal = new bootstrap.Modal(document.getElementById("resumenModal"));
+        modal.show();
+      });
+    })();
+  </script>
+</body>
+</html>
