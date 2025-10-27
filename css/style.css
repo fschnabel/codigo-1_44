@@ -1,9 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit&display=swap');
+
 body {
-    background-color: #f8f9fa;
-  }
+  background-color: #E9F1FA;
+  font-family: 'Kanit';
+  color: #1e375a;
+}
+
+.brand {
+  font-size: 3rem;
+}
+.navBar-custom {
+  background-color: #00ABE4;
+  color: #FFFFFF;
+}
   
-  .card img {
-    height: 250px;
-    object-fit: cover;
+.subtitle {
+  color: #585858;
+  font-weight: 200;
+
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.movie-card{
+    color: #1e375a;
+}
+
+.btn-see-more{
+    background-color: #00ABE4;
+    color: #FFFFFF;
+}
+
+.btn-watch-trailer{
+    background-color: #E9F1FA;
+    color: #1e375a;
+}
+
+.required::after { content:" *"; color:#dc3545; }
+
+.rent-card { border-radius: 1rem; }
+
+.hero-header {
+    background-size: 150% 150%;
+    color: #1e375a;
+    animation: gradientMove 8s ease infinite;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
-  
+
+  @keyframes gradientMove {
+    0% { background-position: left center; }
+    50% { background-position: right center; }
+    100% { background-position: left center; }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 1s ease-out forwards;
+  }
+  .fade-in-delay {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 1s ease-out 0.3s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+.footer{
+  background-color: #1e375a;
+  color: #FFFFFF;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #FFFFFF !important;
+    text-decoration: underline;
+}

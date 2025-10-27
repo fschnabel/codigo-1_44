@@ -1,0 +1,282 @@
+[
+  {
+    "peliculaId": 1,
+    "resenas": [
+      {
+        "autor": "Usuario1",
+        "rating": 4,
+        "comentario": "Visualmente impactante y con un mundo inmersivo; el ritmo pausado construye tensión y recompensa con gran atmósfera.",
+        "fecha": "21/02/2023"
+      },
+      {
+        "autor": "Usuario2",
+        "rating": 5,
+        "comentario": "Hans Zimmer eleva cada escena. La historia se siente épica, aunque deja cabos para la segunda parte.",
+        "fecha": "16/05/2024"
+      },
+      {
+        "autor": "Usuario3",
+        "rating": 4,
+        "comentario": "Denis Villeneuve domina la escala y el detalle. Requiere atención, pero paga con una experiencia monumental.",
+        "fecha": "13/10/2023"
+      },
+      {
+        "autor": "Usuario4",
+        "rating": 4,
+        "comentario": "Fotografía y diseño sonoros impecables. Personajes bien definidos, especialmente Paul y Jessica.",
+        "fecha": "28/06/2023"
+      },
+      {
+        "autor": "Usuario5",
+        "rating": 5,
+        "comentario": "Adaptación respetuosa y moderna. Algunas subtramas quedan en promesa, pero el conjunto es sobresaliente.",
+        "fecha": "07/03/2023"
+      }
+    ]
+  },
+  {
+    "peliculaId": 2,
+    "resenas": [
+      {
+        "autor": "Usuario1",
+        "rating": 3,
+        "comentario": "Encantadora comedia romántica con química natural. Repite fórmula, pero mantiene corazón y humor.",
+        "fecha": "11/07/2023"
+      },
+      {
+        "autor": "Usuario2",
+        "rating": 3,
+        "comentario": "Adam Sandler y Drew Barrymore funcionan perfecto. La premisa se sostiene con ternura.",
+        "fecha": "21/04/2024"
+      },
+      {
+        "autor": "Usuario3",
+        "rating": 5,
+        "comentario": "Paisajes de Hawái y banda sonora agradable. Ideal para ver en familia.",
+        "fecha": "24/02/2023"
+      },
+      {
+        "autor": "Usuario4",
+        "rating": 5,
+        "comentario": "La repetición diaria no cansa; ayuda al crecimiento de los personajes.",
+        "fecha": "12/02/2024"
+      },
+      {
+        "autor": "Usuario5",
+        "rating": 5,
+        "comentario": "Humor ligero con momentos emotivos bien dosificados; final satisfactorio.",
+        "fecha": "09/05/2025"
+      }
+    ]
+  },
+  {
+    "peliculaId": 3,
+    "resenas": [
+      {
+        "autor": "Usuario1",
+        "rating": 4,
+        "comentario": "Heath Ledger deslumbrante. El Joker redefine el villano con presencia inquietante y compleja.",
+        "fecha": "08/07/2025"
+      },
+      {
+        "autor": "Usuario2",
+        "rating": 5,
+        "comentario": "Acción intensa y guion sólido; explora dilemas éticos sin perder ritmo.",
+        "fecha": "14/01/2023"
+      },
+      {
+        "autor": "Usuario3",
+        "rating": 4,
+        "comentario": "La tensión no decae y Gotham se siente viva, peligrosa, creíble.",
+        "fecha": "15/05/2025"
+      },
+      {
+        "autor": "Usuario4",
+        "rating": 5,
+        "comentario": "Música y montaje construyen un crescendo memorable. Revisión obligatoria del género.",
+        "fecha": "23/07/2024"
+      },
+      {
+        "autor": "Usuario5",
+        "rating": 4,
+        "comentario": "El triángulo Batman–Joker–Dent ofrece capas temáticas profundas y resonantes.",
+        "fecha": "16/03/2024"
+      }
+    ]
+  },
+  {
+    "peliculaId": 4,
+    "resenas": [
+      {
+        "autor": "Usuario1",
+        "rating": 4,
+        "comentario": "Carisma puro de Robert Downey Jr. Inicia el MCU con energía y humor.",
+        "fecha": "29/07/2023"
+      },
+      {
+        "autor": "Usuario2",
+        "rating": 3,
+        "comentario": "Efectos sólidos para su época y narrativa clara. Villano funcional.",
+        "fecha": "17/02/2025"
+      },
+      {
+        "autor": "Usuario3",
+        "rating": 3,
+        "comentario": "Banda sonora potente y tono irreverente definen la identidad de la saga.",
+        "fecha": "05/01/2025"
+      },
+      {
+        "autor": "Usuario4",
+        "rating": 4,
+        "comentario": "La forja del traje es icónica y sigue inspirando.",
+        "fecha": "25/06/2024"
+      },
+      {
+        "autor": "Usuario5",
+        "rating": 3,
+        "comentario": "Equilibrio entre acción y origen del héroe, muy entretenida.",
+        "fecha": "29/07/2025"
+      }
+    ]
+  },
+  {
+    "peliculaId": 5,
+    "resenas": [
+      {
+        "autor": "Usuario1",
+        "rating": 4,
+        "comentario": "Cierre emotivo y espectacular. Aúna tramas con ingenio y respeto por los personajes.",
+        "fecha": "14/02/2025"
+      },
+      {
+        "autor": "Usuario2",
+        "rating": 4,
+        "comentario": "Humor y drama conviven sin fricción. Batalla final impresionante.",
+        "fecha": "23/08/2024"
+      },
+      {
+        "autor": "Usuario3",
+        "rating": 5,
+        "comentario": "Fan service bien logrado; recompensa a quienes siguieron todo el viaje.",
+        "fecha": "29/01/2024"
+      },
+      {
+        "autor": "Usuario4",
+        "rating": 4,
+        "comentario": "Ritmo ágil pese a la duración. Grandes momentos heroicos.",
+        "fecha": "04/04/2023"
+      },
+      {
+        "autor": "Usuario5",
+        "rating": 4,
+        "comentario": "La despedida de ciertos personajes es conmovedora y digna.",
+        "fecha": "15/08/2024"
+      }
+    ]
+  },
+  {
+    "peliculaId": 6,
+    "resenas": [
+      {
+        "autor": "Usuario1",
+        "rating": 3,
+        "comentario": "Mundo de Wakanda fascinante, rica representación cultural. Michael B. Jordan destaca.",
+        "fecha": "21/04/2024"
+      },
+      {
+        "autor": "Usuario2",
+        "rating": 3,
+        "comentario": "Acción efectiva y mensaje social claro, sin sermonear.",
+        "fecha": "17/02/2025"
+      },
+      {
+        "autor": "Usuario3",
+        "rating": 4,
+        "comentario": "Diseño de producción y vestuario notables; música vibrante.",
+        "fecha": "17/07/2025"
+      },
+      {
+        "autor": "Usuario4",
+        "rating": 5,
+        "comentario": "El clímax emocional funciona, aunque el CGI final es irregular.",
+        "fecha": "17/01/2025"
+      },
+      {
+        "autor": "Usuario5",
+        "rating": 3,
+        "comentario": "Protagonistas carismáticos y secundarios memorables; gran aporte al MCU.",
+        "fecha": "28/01/2025"
+      }
+    ]
+  },
+  {
+    "peliculaId": 7,
+    "resenas": [
+      {
+        "autor": "Usuario1",
+        "rating": 5,
+        "comentario": "Apuesta multiversal divertida con nostalgia bien medida. Sorpresas que emocionan.",
+        "fecha": "05/03/2024"
+      },
+      {
+        "autor": "Usuario2",
+        "rating": 5,
+        "comentario": "Tom Holland alcanza su mejor interpretación; crecimiento real del héroe.",
+        "fecha": "27/05/2023"
+      },
+      {
+        "autor": "Usuario3",
+        "rating": 4,
+        "comentario": "Villanos clásicos reimaginados con respeto y chispa.",
+        "fecha": "16/05/2024"
+      },
+      {
+        "autor": "Usuario4",
+        "rating": 4,
+        "comentario": "Acción creativa y momentos dramáticos que golpean fuerte.",
+        "fecha": "04/08/2025"
+      },
+      {
+        "autor": "Usuario5",
+        "rating": 5,
+        "comentario": "Final agridulce valiente; abre una nueva etapa interesante.",
+        "fecha": "06/07/2024"
+      }
+    ]
+  },
+  {
+    "peliculaId": 8,
+    "resenas": [
+      {
+        "autor": "Usuario1",
+        "rating": 4,
+        "comentario": "Cierre conmovedor para los Guardianes, centrado en Rocket. Humor y emoción equilibrados.",
+        "fecha": "26/10/2024"
+      },
+      {
+        "autor": "Usuario2",
+        "rating": 4,
+        "comentario": "Visualmente inventiva y con gran banda sonora. Ritmo sólido.",
+        "fecha": "14/04/2024"
+      },
+      {
+        "autor": "Usuario3",
+        "rating": 4,
+        "comentario": "James Gunn entrega corazón y rareza en igual medida.",
+        "fecha": "08/10/2024"
+      },
+      {
+        "autor": "Usuario4",
+        "rating": 5,
+        "comentario": "Momentos oscuros bien tratados; tema de la amistad resuena.",
+        "fecha": "02/07/2024"
+      },
+      {
+        "autor": "Usuario5",
+        "rating": 4,
+        "comentario": "Gran despedida del equipo, satisfactoria y audaz.",
+        "fecha": "08/03/2024"
+      }
+    ]
+  }
+]
